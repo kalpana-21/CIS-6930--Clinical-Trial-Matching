@@ -1,0 +1,40 @@
+,Classification,Summary,Classification Result,Actual,Predicted
+44,0,presence small cell lung cancer alone nsclc,Not Met,0,1
+18,0,ovarian epithelial cancer recurrent diagnosis prior doxorubicin exposure would result total lifetime exposure five hundred fiftymg mtwo four cycles treatment,Not Met,0,1
+83,1,adult giant cell glioblastoma diagnosis willing provide mandatory blood tissue samples correlative research purposes phase ii,Met,1,1
+9,1,precancerous condition diagnosis able understand procedures potential risks involved determined clinic staff,Met,1,1
+73,1,histologically confirmed high grade glioma grade iii iv site within brain including following,Met,1,1
+67,1,patients must precursor lymphoblastic leukemia lymphoma,Met,1,1
+65,0,recurrent metastatic squamous neck cancer occult primary diagnosis patients treated hematopoietic colony stimulating growth factors filgrastim csf sargramostim gm csf equal less two weeks prior starting study drug erythropoietin darbepoetin therapy initiated least two weeks prior enrollment may continued,Not Met,0,1
+4,0,lymphoma small lymphocytic diagnosis typing hla class ii drbone based pcr sequence specific oligonucleotide primers ssop,Not Met,0,1
+88,1,stage ii contiguous adult diffuse large cell lymphoma diagnosis donor,Met,1,1
+14,1,natural killer cell lymphoblastic leukemia lymphoma diagnosis bilirubin doc mg dl alanine aminotransferase alt aspartate aminotransferase ast alkaline phosphatase alp five times upper limit normal uln,Met,1,1
+30,0,autosomal dominant diagnosis females pregnant breast feeding,Not Met,0,1
+92,0,differentiated thyroid cancer diagnosis prior external beam radiation therapy target lesion,Not Met,0,1
+11,0,recurrent childhood brain tumor diagnosis patients receiving anti neoplastic agents excluded,Not Met,0,1
+93,1,stage iiib non small cell lung cancer diagnosis patients must hemoptysis greater equal one two teaspoon within three months prior registration,Met,1,1
+89,0,stage iii childhood lymphoblastic lymphoma diagnosis six hundred cgy chest irradiation medically necessary,Not Met,0,1
+84,1,multiple myeloma plasma cell neoplasm diagnosis hepatic,Met,1,1
+25,1,anaplastic large cell lymphoma diagnosis life expectancy must greater three months,Met,1,1
+78,1,multiple myeloma diagnosis must achieved least partial response pr prior autologous hct must progressive disease pd prior initiation maintenance therapy,Met,1,1
+25,0,retinoblastoma diagnosis glomerular filtration rate gfr less one hundred ml min,Not Met,0,1
+42,1,childhood grade iii lymphomatoid granulomatosis diagnosis serum albumin greater equal two dl,Met,1,1
+15,1,stage iv adult immunoblastic large cell lymphoma diagnosis unrelated donor,Met,1,1
+3,1,recurrent fallopian tube carcinoma diagnosis patients allowed receive required receive two additional cytotoxic regimens management recurrent persistent disease one non platinum non taxane regimen,Met,1,1
+6,0,stage ia breast cancer diagnosis women childbearing potential unless negative urine human chorionic gonadotropin hcg within previous twenty four hours procedure,Not Met,0,1
+87,1,hepatocellular carcinoma diagnosis child pugh class b,Met,1,1
+20,0,recurrent anal cancer diagnosis patients chemotherapy radiotherapy within four weeks six weeks nitrosoureas mitomycin prior entering study recovered adverse events due agents administered four weeks earlier,Not Met,0,1
+47,0,exceptions include basal cell carcinoma skin squamous cell carcinoma skin situ cervical cancer undergone potentially curative therapy,Not Met,0,1
+73,0,esophageal adenocarcinoma diagnosis thyroxine insulin physiologic corticosteroid replacement therapy adrenal pituitary insufficiency etc,Not Met,0,1
+57,1,multiple myeloma plasma cell neoplasm diagnosis radiotherapy,Met,1,1
+57,0,stage iva colon cancer diagnosis prior treatment sorafenib allowed,Not Met,0,1
+53,0,stage iiib skin melanoma diagnosis steroid therapy steroid therapy seven consecutive days steroids within prior four weeks,Not Met,0,1
+98,1,splenic marginal zone lymphoma diagnosis donor,Met,1,1
+12,1,testicular lymphoma diagnosis bulky disease greater equal five cm least one dimension,Met,1,1
+87,0,renal cell carcinoma diagnosis age mass kilograms constant serum creatinine µmol constant equal male doc three women doc four,Not Met,0,1
+86,0,tongue cancer diagnosis hemorrhage bleeding event greater ctcae grade three within four weeks first dose study drug,Not Met,0,1
+64,1,stage iv extragonadal seminoma diagnosis pulmonary embolism,Met,1,1
+33,1,gastrointestinal cancer diagnosis lost ten pre illness stable body weight,Met,1,1
+77,1,pancreatic adenocarcinoma diagnosis age eighteen years older,Met,1,1
+52,0,psychosocial effects cancer treatment diagnosis john wort phenytoin phenobarbital diazepam tricyclic antidepressants,Not Met,0,1
+88,0,gastric adenocarcinoma diagnosis known psychiatric substance abuse disorders would interfere cooperation requirements trial,Not Met,0,1

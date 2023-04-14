@@ -67,8 +67,8 @@ tokenizer = BertTokenizer.from_pretrained("emilyalsentzer/Bio_ClinicalBERT")
 # tokenizer = AutoTokenizer.from_pretrained("pritamdeka/BioBert-PubMed200kRCT")
 
 # Tokenize text
-train_encodings = tokenizer(train_df["Summary"].tolist(), truncation=True, padding=True, max_length=512)
-test_encodings = tokenizer(test_df["Summary"].tolist(), truncation=True, padding=True, max_length=512)
+train_tokens = tokenizer(train_df["Summary"].tolist(), truncation=True, padding=True, max_length=512)
+test_tokens = tokenizer(test_df["Summary"].tolist(), truncation=True, padding=True, max_length=512)
 
 # Convert labels to tensors
 train_labels = torch.tensor(train_df["Classification"].tolist())
@@ -76,19 +76,19 @@ test_labels = torch.tensor(test_df["Classification"].tolist())
 
 
 # Create PyTorch DataLoader objects
-train_dataset = torch.utils.data.TensorDataset(torch.tensor(train_encodings["input_ids"]), torch.tensor(train_encodings["attention_mask"]), torch.tensor(train_labels))
-test_dataset = torch.utils.data.TensorDataset(torch.tensor(test_encodings["input_ids"]), torch.tensor(test_encodings["attention_mask"]), torch.tensor(test_labels))
-train_loader = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)
-test_loader = torch.utils.data.DataLoader(test_dataset, batch_size, shuffle=False)
+train_tensor_dataset = torch.utils.data.TensorDataset(torch.tensor(train_tokens["input_ids"]), torch.tensor(train_tokens["attention_mask"]), torch.tensor(train_labels))
+test_tensor_dataset = torch.utils.data.TensorDataset(torch.tensor(test_tokens["input_ids"]), torch.tensor(test_tokens["attention_mask"]), torch.tensor(test_labels))
+train_dataloader = torch.utils.data.DataLoader(train_tensor_dataset, batch_size, shuffle=True)
+test_dataloader = torch.utils.data.DataLoader(test_tensor_dataset, batch_size, shuffle=False)
 
 # Train the BERT model
 optimizer = AdamW(model.parameters(), lr=2e-5, eps=1e-8)
-scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=len(train_loader) * 5)
+scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=len(train_dataloader) * 5)
 model.train()
 i=1
 for epoch in range(epochs):
-    for batch in train_loader:
-        print("epoch:",epoch+1,"/",epochs," batch:",i,"/",len(train_loader))
+    for batch in train_dataloader:
+        print("epoch:",epoch+1,"/",epochs," batch:",i,"/",len(train_dataloader))
         i=i+1
         optimizer.zero_grad()
         input_ids, attention_mask, labels = batch
@@ -103,7 +103,7 @@ model.eval()
 with torch.no_grad():
     y_true = []
     y_pred = []
-    for batch in test_loader:
+    for batch in test_dataloader:
         input_ids, attention_mask, labels = batch
         outputs = model(input_ids, attention_mask=attention_mask)
         logits = outputs.logits

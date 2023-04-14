@@ -61,19 +61,19 @@ for i in range(len(df)):
 # Load the dataset of eligible patients and ineligible patients
 # and create a list of embeddings for each patient
 patients = df
-embeddings = []
+patient_embeddings = []
 labels = []
 for i in range(len(patients)):
     tokens = tokenizer(patients.iloc[i,1], padding=True, truncation=True, return_tensors="pt")
     with torch.no_grad():
         embedding = model(**tokens).last_hidden_state.mean(dim=1).numpy()
-    embeddings.append(embedding)
+    patient_embeddings.append(embedding)
     labels.append(patients.iloc[i,0])
 
-embeddings = np.squeeze(embeddings)
+patient_embeddings = np.squeeze(patient_embeddings)
 
 # Split the embeddings and labels into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(embeddings, labels, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(patient_embeddings, labels, test_size=0.2, random_state=42)
 
 unique_labels = np.unique(labels)
 # Train an SVM classifier on the training set
@@ -85,13 +85,13 @@ y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 
-# Make a prediction on a new patient
-new_patient = " recurrent childhood lymphoblastic lymphoma diagnosis and bone marrow may be used in conjunction with blood progenitor cells."
-tokens = tokenizer(new_patient, padding=True, truncation=True, return_tensors="pt")
-with torch.no_grad():
-    embedding = model(**tokens).last_hidden_state.mean(dim=1).numpy()
-embedding = np.squeeze(embedding)
-prediction = clf.predict([embedding])
+# # Make a prediction on a new patient
+# new_patient_data = " recurrent childhood lymphoblastic lymphoma diagnosis and bone marrow may be used in conjunction with blood progenitor cells."
+# new_tokens = tokenizer(new_patient_data, padding=True, truncation=True, return_tensors="pt")
+# with torch.no_grad():
+#     embedding = model(**new_tokens).last_hidden_state.mean(dim=1).numpy()
+# embedding = np.squeeze(embedding)
+# prediction = clf.predict([embedding])
 
 #Metrics to compute f1 score
 #true positives, true negatives, false positives, false negatives
